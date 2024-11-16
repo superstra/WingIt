@@ -9,8 +9,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text text;
-    [SerializeField] private bool activeTimer;
+    [SerializeField] private TMP_Text timerText;
+    [SerializeField] private TMP_Text speedText;
+    [SerializeField] private bool activeTimer = true;
+    [SerializeField] private Rigidbody bird;
     float startTime;
     float time;
     // Start is called before the first frame update
@@ -18,12 +20,14 @@ public class GameManager : MonoBehaviour
     {
         activeTimer = true;
         startTime = Time.time;
-        text.text = startTime.ToString();
+        timerText.text = startTime.ToString();
+        speedText.text = "hi hello im init'd";
     }
 
     // Update is called once per frame
     void Update()
     {
+        //timer
         if (activeTimer) {
             time += Time.deltaTime;
         }
@@ -31,9 +35,13 @@ public class GameManager : MonoBehaviour
         float seconds = time - (minutes * 60F);
 
         string timeToDisplay = string.Format("{0:00}:{1:00.000}",minutes,seconds);
-        text.text = timeToDisplay;
+        timerText.text = timeToDisplay;
 
+        //Velocity
         
+        speedText.text = "SPEED:"+string.Format("{0:000.0}",bird.velocity.magnitude);
+
+
         //old implementation
         //float currtime = Time.time - startTime;
         //currtime = MathF.Round(currtime, 3);    
