@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   track: {fileID: 1512935329}
   arrow: {fileID: 826625959}
-  renderer: {fileID: 826625957}
+  rendering: {fileID: 826625957}
 --- !u!23 &826625957 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: e6cbd3b77b1b04b418a3daf3a64a3573, type: 3}
@@ -1144,13 +1144,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843903360}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
-  m_LocalPosition: {x: 0, y: 13, z: -5}
+  m_LocalRotation: {x: 0.17923479, y: -0, z: -0, w: 0.9838063}
+  m_LocalPosition: {x: 0, y: -0.79, z: -10.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.65, y: 0, z: 0}
 --- !u!114 &1843903364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,8 +1163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861f0c5a43f59314aa167dbd58106194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 1843903362}
+  cam: {fileID: 1843903362}
   objectPosition: {fileID: 1512935329}
+  distanceFromBird: 13
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

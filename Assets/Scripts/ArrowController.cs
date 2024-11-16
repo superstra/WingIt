@@ -6,7 +6,7 @@ public class ArrowController : MonoBehaviour
 {
     [SerializeField] private Transform track;
     [SerializeField] private Transform arrow;
-    [SerializeField] private MeshRenderer renderer;
+    [SerializeField] private MeshRenderer rendering;
     private Vector3 dir;
     // Start is called before the first frame update
     void Start()
@@ -24,11 +24,11 @@ public class ArrowController : MonoBehaviour
             dir.Normalize();
             Quaternion quat = Quaternion.LookRotation(dir, new Vector3(0,1,0));
             arrow.transform.SetPositionAndRotation(track.position, quat);
-            renderer.enabled = true;
+            rendering.enabled = true;
         }
         else
         {
-            renderer.enabled = false;
+            rendering.enabled = false;
         }
     }
 }
