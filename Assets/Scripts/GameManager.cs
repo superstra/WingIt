@@ -11,14 +11,14 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text speedText;
-    [SerializeField] private bool activeTimer = true;
+    [SerializeField] public bool activeTimer = false;
     [SerializeField] private Rigidbody bird;
     float startTime;
     float time;
     // Start is called before the first frame update
     void Start()
     {
-        activeTimer = true;
+        activeTimer = false;
         startTime = Time.time;
         timerText.text = startTime.ToString();
         speedText.text = "hi hello im init'd";
