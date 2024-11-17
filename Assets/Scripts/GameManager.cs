@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text speedText;
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] public bool activeTimer = false;
-    [SerializeField] private Rigidbody bird;
+    [SerializeField] private Rigidbody birdrb;
+    [SerializeField] private PlayerController bird;
+    
 
     private bool gamestarted = false;
     private float countDownTimeInterval = 1.0f;
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
 
         //Velocity
         
-        speedText.text = "SPEED:"+string.Format("{0:000.0}",bird.velocity.magnitude);
+        speedText.text = "SPEED:"+string.Format("{0:000.0}",birdrb.velocity.magnitude);
 
 
         //old implementation
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
                 {
                     countdownText.text = "GO!";
                     //let player move here
+                    bird.go();
                 }
                 else
                 {
