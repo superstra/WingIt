@@ -37,4 +37,5 @@ public class PlayerController : MonoBehaviour
         dir = new Vector3 (lr, 0, ud);
         dir.Normalize();
     }
+
 }
