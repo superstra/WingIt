@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
         //Velocity
         
-        speedText.text = "SPEED:"+string.Format("{0:000.0}",birdrb.velocity.magnitude);
+        speedText.text = "SPEED:"+string.Format("{0:000.0}",birdrb.velocity.magnitude * 2);
 
         if (Input.GetKeyDown(KeyCode.R)) {
             Debug.Log("User restart");
