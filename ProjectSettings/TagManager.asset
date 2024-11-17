@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Checkpoint
   - CM
+  - GM
   layers:
   - Default
   - TransparentFX
