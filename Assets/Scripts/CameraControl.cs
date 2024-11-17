@@ -18,7 +18,8 @@ public class CameraControl : MonoBehaviour
 
     void updateCamOffset() {
         Vector3 angles = cam.transform.rotation.eulerAngles;
-        camOffset = new Vector3(Mathf.Sin(angles.y * Mathf.Deg2Rad), -1F* Mathf.Sin(angles.x *Mathf.Deg2Rad) , Mathf.Cos(angles.y * Mathf.Deg2Rad));
+        camOffset = new Vector3(Mathf.Sin(angles.y * Mathf.Deg2Rad), -1F * Mathf.Sin(angles.x * Mathf.Deg2Rad), Mathf.Cos(angles.x * Mathf.Deg2Rad));
+        camOffset.Normalize();
         camOffset *= -distanceFromBird;
     }
 
