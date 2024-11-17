@@ -58,6 +58,10 @@ public class GameManager : MonoBehaviour
         //text.text = currtime.ToString();
     }
 
+    public void displayTime() {
+        countdownText.text = "FINAL TIME: " + timerText.text;
+        bird.stop();
+    }
     private void FixedUpdate()
     {
         if (!gamestarted) {
@@ -78,12 +82,14 @@ public class GameManager : MonoBehaviour
                 else if (countdownText.text == "1")
                 {
                     countdownText.text = "GO!";
-                    //let player move here
+                    //let player move here, start timer.
                     bird.go();
+                    activeTimer = true;
                 }
-                else
+                else if (countdownText.text == "GO!")
                 {
                     countdownText.text = "";
+                    gamestarted = true;
                 }
             }
             else

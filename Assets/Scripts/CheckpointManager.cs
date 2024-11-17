@@ -33,6 +33,7 @@ public class CheckpointManager : MonoBehaviour
             //TODO::what happens when we reach the finish
             progress.text = "FINISHED!";
             gm.activeTimer = false;
+            gm.displayTime();
         }
         else if (id == 0 && lastCheckpoint == -2) {
             //First time crossing start line

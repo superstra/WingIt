@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour
             accelerating = false;
         }
     }
-
+    public void stop() {
+        canAccelerate = false;
+    }
     public void go() {
         canAccelerate = true;
     }
