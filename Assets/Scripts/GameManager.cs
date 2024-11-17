@@ -6,6 +6,7 @@ using TMPro;
 using TMPro.EditorUtilities;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -51,6 +52,10 @@ public class GameManager : MonoBehaviour
         
         speedText.text = "SPEED:"+string.Format("{0:000.0}",birdrb.velocity.magnitude);
 
+        if (Input.GetKeyDown(KeyCode.R)) {
+            Debug.Log("User restart");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
         //old implementation
         //float currtime = Time.time - startTime;

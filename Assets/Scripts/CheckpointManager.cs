@@ -5,20 +5,15 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
-
-    private static CheckpointManager instance;
     private int lastCheckpoint = -2;
     [SerializeField] GameManager gm;
     [SerializeField] TMP_Text progress;
     [SerializeField] int numberOfCheckpoints = 1;
-    private void Awake()
-    {
-        if (instance == null) { instance = this; DontDestroyOnLoad(instance); } else { Destroy(gameObject); }
-    }
-    // Start is called before the first frame update
+    
     void Start()
     {
         progress.text = "Checkpoint 0/" + numberOfCheckpoints;
+        lastCheckpoint = -2;
     }
 
     public void checkpointTouched(int id)
@@ -40,11 +35,5 @@ public class CheckpointManager : MonoBehaviour
             lastCheckpoint = 0;
             gm.activeTimer = true;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
