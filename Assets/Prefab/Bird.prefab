@@ -148,5 +148,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 3898101168648797176}
   position: {fileID: 8768043739006701554}
-  magnitude: 31
+  magnitude: 80
   canAccelerate: 0
