@@ -1,22 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class TireScript : MonoBehaviour
 {
     [SerializeField] float impact = 20;
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player")) { 
+            Vector3 refl = (other.transform.position - transform.position);
+            refl.y = 0;
+            Vector3.Normalize(refl);
+            Vector3 inDir = other.attachedRigidbody.velocity.normalized;
+
+            Vector3 newDir = Vector3.Reflect(inDir, refl);
+            (other.attachedRigidbody).velocity = newDir * other.attachedRigidbody.velocity.magnitude;
+            other.attachedRigidbody.AddForce(newDir*impact, ForceMode.Impulse);
+
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /*
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -28,5 +35,6 @@ public class TireScript : MonoBehaviour
         }
         
           
-    }
+    }*/
 }
+    
